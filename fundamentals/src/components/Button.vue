@@ -1,9 +1,13 @@
 <template>
-    <button class='btn'>Add Task</button>
+    <button :style="{background: colour}" class='btn'>{{ text }}</button>
 </template>
 
 <script>
   export default {
-    name: 'Button'
+    name: 'Button',
+    props: {
+        colour: String,
+        text: String
+    }
   }
 </script>

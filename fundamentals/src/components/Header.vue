@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1>{{ title }}</h1>
-        <Button />
+        <Button @click="onClick()" text="Add task" colour="green"/>
     </header>
 </template>
 
@@ -15,6 +15,11 @@ export default {
     },
     components: {
         Button
+    },
+    methods: {
+        onClick() {
+            console.log('click')
+        }
     }
 }
 </script>

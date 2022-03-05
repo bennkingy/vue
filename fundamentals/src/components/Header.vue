@@ -1,7 +1,11 @@
 <template>
     <header>
         <h1>{{ title }}</h1>
-        <Button @click="onClick()" text="Add task" colour="green"/>
+        <Button
+            @btn-click="$emit('toggle-add-task')"
+            :text="showAddTask ? 'Close' : 'Add Task'"
+            :colour="showAddTask ? 'red' : 'green'"
+        />
     </header>
 </template>
 
@@ -11,14 +15,16 @@ import Button from './Button.vue'
 export default {
     name: 'Header',
     props: {
-        'title': String
+        'title': String,  
+        'showAddTask': Boolean
     },
     components: {
         Button
     },
     methods: {
         onClick() {
-            console.log('click')
+           console.log('clicked again')
+           $emit(showAddTask)
         }
     }
 }
